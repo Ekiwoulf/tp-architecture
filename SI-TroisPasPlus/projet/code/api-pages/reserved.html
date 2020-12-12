@@ -1,0 +1,72 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #3498DB;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav abis {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 17px;
+ }
+
+.topnav a:hover {
+  background-color: #1173B4;
+  color: white;
+}
+
+.topnav a.active {
+  background-color: #1173B4;
+  color: white;
+}
+body {
+background-color:white;
+background-image:url(../static/bg.jpg);
+background-repeat:no-repeat;
+background-size: cover;
+height:100%;
+width:100%;
+}
+
+</style>
+</head>
+<body>
+<div class="topnav">
+  <a href="/fly">Back</a>
+</div>
+  <div class="topnav">
+    <abis> Vous avez reservé un vol à destination de {{vol['destination']}} le {{vol['date']}}.</abis>
+  </div>
+  <div class="topnav">
+    <abis>Départ de {{vol['lieu_départ']}} à {{vol['heure_départ']}}.</abis>
+  </div>
+  <div class="topnav">
+    <abis>Arrivée à {{vol['destination']}} à {{vol['heure_arrivée']}}.</abis>
+  </div>
+
+
+<h2>Imagine a payment interface ..... </h2>
+<h2>Your fly has been reserved !</h2>
+
+
+</body>
+</html>

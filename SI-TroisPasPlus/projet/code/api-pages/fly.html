@@ -1,0 +1,92 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #3498DB;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav abis {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 17px;
+ }
+
+.topnav a:hover {
+  background-color: #1173B4;
+  color: white;
+}
+
+.topnav a.active {
+  background-color: #1173B4;
+  color: white;
+}
+
+.btn {
+border: 2px solid transparent;
+background: #3498DB;
+color: #ffffff;
+font-size: 16px;
+line-height: 25px;
+padding: 0px 0;
+text-decoration: none;
+text-shadow: none;
+border-radius: 3px;
+box-shadow: none;
+transition: 0.25s;
+display: block;
+width: 200px;
+margin: 0 auto;
+}
+
+body {
+background-color:white;
+background-image:url(../static/bg.jpg);
+background-repeat:no-repeat;
+background-size: cover;
+height:100%;
+width:100%;
+}
+
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a href="/">Home</a>
+  <a class="active" href="/fly">Fly</a>
+  <a href="/reservation">Reservation</a>
+  <a href="/about">About</a>
+    <a href="/logout">Logout</a>
+</div>
+  <div class="topnav">
+  <abis> Avion | Date | Heure-de-départ | Heure-d'arrivé | Lieu-de-départ | Destination | Places-disponibles</abis>
+    </div>
+  {% for fly in flylist %}
+    <div class="topnav">
+    <abis>{{fly['id_avion']}} | {{fly['date']}} | {{fly['heure_départ']}} | {{fly['heure_arrivée']}} | {{fly['lieu_départ']}} | {{fly['destination']}} | {{fly['nb_places_disponibles']}} | {{fly['prix']}} </abis>
+      <form action="/reserved" method="POST">
+        <input type="hidden" name="id" value={{fly['id']}}>
+        <input class="abis" type="submit" value="Reserver">
+      </form>
+    </div>
+  {% endfor %}
+</body>
+</html>

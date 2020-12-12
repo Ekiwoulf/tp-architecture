@@ -1,51 +1,35 @@
 # TP Architecture Distribué
 
-Ce TP fonctionne par groupe de 4 ou 5.
-Nous allons réalisé une solution, ultra simplifié de reservation de billet d'avion.
-Nous gérons 3 aéroports:
-- New York qui porte le code JFK
-- CDG Paris qui porte le code CDG
-- Detroit qui porte le code DTW
+======================HOW TO USE======================
+====Première étape : Avoir un environnement python====
 
-Tout les jours, des billets d'avions sont disponible.
-Un billet d'avion est consituté:
-- D'un code depart
-- D'un code destination
-- D'un prix (en Euros)
+Afin de pouvoir faire tourner en local notre programme, il est nécessaire d'avoir un environnement python. Pour ce faire nous utilisons virtualenv.
+1) Installer Virtualenv
+	- sudo apt-get install python-virtualenv
 
-__CDG-JFK 400__ represente donc un billet d'avion au départ de Paris et à destination de New York à 400 euros.
+2) Configurer, utiliser et activer Virtualenv
+	- mkdir ~/virtualenvironment
+	- virtualenv ~/virtualenvironment/venv
+	- cd ~/virtualenvironment/venv/bin
+	- source activate
 
-## Etape 0
+3) Installer les dépendances dont on a besoin
+	- pip install -r requirement.txt
+	
+===========Deuxième étape : Setup database============
 
-- Forker ce [repository](https://github.com/ESIEA-Distributed-Architecture/tp-architecture)
-- Ajouter les membres de votre groupe a ce repository pour les besoins de commit
-- Créer une branche qui porte le nom de la façon constituer de la façon suivante: {majeur-du-chef-promo}-{nom-de-votre-groupe}
-- __Créer un dossier qui porte le même nom, tout ce que vous allez créer, devra se trouver dans ce dossier.__
-- Creer le fichier MEMBERS.md, a l'interieur de ce fichier, rentrer le prénom et nom de chacune des personnes de votre groupe
-- Votre projet devra se trouver dans le dossier ```projet```
-- Faites une Pull Request entre votre branche ```{code-promo}-{nom-de-votre-groupe}``` et la branche ```main``` de ce [repository](https://github.com/ESIEA-Distributed-Architecture/tp-architecture)
+Utiliser la commande python :
+	- python InitDB.py
+	
+=======Troisième étape : Lancer l'application=========
 
-## Etape 1
+Utiliser la commande python :
+	- python main.py
 
-Designer ce systeme de reservation de billet d'avion.
+======Quatrième étape : Se conner à l'application=====
 
-La solution doit permettre:
-- de permettre à un utilisateur de voir la liste des voles disponible
-- de reservations des billets d'avion 
-- de voir ce qu'il a reservé
+Pour vous connecter, utilisez votre mail de l'esiea :
+	mail : prof@et.esiea.fr
+	password : password
 
-Vous présenterez votre design à tous, vous êtes attendu sur:
-- L'architecture globale
-- Le modele de donnée stocké
-- La stack technique
-
-Votre deisgn devra se trouver dans le fichier ```projet/E1-DESIGN.md```
-
-## Etape 2
-
-Implémentez votre solution, votre code devra se trouver dans le dossier ```project/code```
-Lorsque vous avez terminé, venez me voir pour la suite...
-
-## Etpae 3
-
-Surprise !
+Sachant que l'API est un environement de test, nous avons mis à disposition uniquement 3 vols.

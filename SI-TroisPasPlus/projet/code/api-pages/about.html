@@ -1,0 +1,70 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #3498DB;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #1173B4;
+  color: white;
+}
+
+.topnav a.active {
+  background-color: #1173B4;
+  color: white;
+}
+
+.topnav abis {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 17px;
+ }
+
+body {
+background-color:white;
+background-image:url(../static/bg.jpg);
+background-repeat:no-repeat;
+background-size: cover;
+height:100%;
+width:100%;
+}
+
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a  href="/">Home</a>
+  <a href="/fly">Fly</a>
+  <a href="/reservation">Reservation</a>
+  <a class="active" href="/about">About</a>
+    <a href="/logout">Logout</a>
+</div>
+<div class="topnav">
+  <abis>Nom : {{user["nom"]}}</abis>
+  <abis>Prénom : {{user["prenom"]}}</abis>
+  <abis>Civilité : {{user["civilite"]}}</abis>
+  <abis>Date de naissance : {{user["date_de_naissance"]}}</abis>
+  <abis>Adresse mail : {{user["adresse_mail"]}}</abis>
+</div>
+</body>
+</html>
